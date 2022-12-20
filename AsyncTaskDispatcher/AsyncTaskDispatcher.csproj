@@ -9,8 +9,19 @@
         <Product>AsynchronousTaskDispatcher</Product>
         <Copyright>Copyright © Pustalorc 2022</Copyright>
         <AssemblyVersion>1.0.0</AssemblyVersion>
-        <FileVersion>1.0.0</FileVersion>
+        <FileVersion>1.1.0</FileVersion>
         <TargetFramework>net481</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Pustalorc.AsyncTaskDispatcher</PackageId>
+        <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Title>AsyncTaskDispatcher</Title>
+        <Authors>Pustalorc</Authors>
+        <Description>A RocketMod 4 plugin that adds an Asynchronous Task Dispatcher for asyncrhonously dispatching tasks into a second thread, and a static class for access like Rocketmod.</Description>
+        <Copyright>Copyright © 2022 Pustalorc</Copyright>
+        <RepositoryUrl>https://github.com/Pustalorc/AsyncTaskDispatcher</RepositoryUrl>
+        <RepositoryType>Github</RepositoryType>
+        <Version>1.1.0</Version>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Rocket.API">
@@ -34,6 +45,6 @@
         <ReferencePathWithRefAssemblies Update="C:\Users\user\.nuget\packages\microsoft.netframework.referenceassemblies.net48\1.0.2\build\.NETFramework\v4.8\Facades\System.Runtime.dll" />
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Include="Pustalorc.AsyncThreadingUtils" Version="1.0.0" />
+        <PackageReference Include="Pustalorc.AsyncThreadingUtils" Version="1.0.0" />
     </ItemGroup>
 </Project>

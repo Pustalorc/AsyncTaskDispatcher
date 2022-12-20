@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Pustalorc.Libraries.AsyncThreadingUtils.TaskQueue.Implementations;
-using Pustalorc.Plugins.AsynchronousTaskDispatcher.Plugin;
+using Pustalorc.Libraries.AsyncThreadingUtils.TaskQueue.QueueableTasks;
 using Rocket.Core.Logging;
 
-namespace Pustalorc.Plugins.AsynchronousTaskDispatcher.TaskQueueImplementation;
+namespace Pustalorc.Plugins.AsynchronousTaskDispatcher.Plugin;
 
 internal sealed class TaskQueueWithConfiguration : TaskQueue
 {
+    internal List<QueueableTask> ExposeQueue => Queue.ToList();
+
     public int QueueCount => Queue.Count;
 
     public TaskQueueWithConfiguration(AsyncTaskDispatcherPluginConfiguration configuration) : base(LogException)
@@ -26,6 +30,13 @@ internal sealed class TaskQueueWithConfiguration : TaskQueue
 
         DelayOnEmptyQueue = delayOnEmpty;
         DelayOnItemNotReadyAndSolo = delayOnSolo;
+    }
+
+    internal void Clear()
+    {
+        while (Queue.TryDequeue(out _))
+        {
+        }
     }
 
     private static void LogException(Exception exception)
