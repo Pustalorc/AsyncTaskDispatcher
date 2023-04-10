@@ -7,7 +7,7 @@ using Pustalorc.Plugins.AsynchronousTaskDispatcher.Plugin;
 namespace Pustalorc.Plugins.AsynchronousTaskDispatcher.Dispatcher;
 
 /// <summary>
-/// The class to interact with the Asynchronous Task Dispatcher.
+///     The class to interact with the Asynchronous Task Dispatcher.
 /// </summary>
 public static class AsyncTaskDispatcher
 {

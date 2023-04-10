@@ -13,23 +13,30 @@ internal sealed class TaskQueueWithConfiguration : TaskQueue
 
     public int QueueCount => Queue.Count;
 
-    public TaskQueueWithConfiguration(AsyncTaskDispatcherPluginConfiguration configuration) : base(LogException)
+    public TaskQueueWithConfiguration(AsyncTaskDispatcherPluginConfiguration configuration) : base(LogException,
+        delayOnItemExecuted: configuration.DelayOnItemExecuted)
     {
         ReloadConfiguration(configuration);
     }
 
     public void ReloadConfiguration(AsyncTaskDispatcherPluginConfiguration configuration)
     {
-        var delayOnEmpty = configuration.DelayOnEmptyQueue;
-        if (delayOnEmpty == 0)
-            delayOnEmpty = 1;
+        var delayOnEmptyQueue = configuration.DelayOnEmptyQueue;
+        if (delayOnEmptyQueue == 0)
+            delayOnEmptyQueue = 1;
 
-        var delayOnSolo = configuration.DelayOnItemNotReadyAndSolo;
-        if (delayOnSolo == 0)
-            delayOnSolo = 1;
+        var delayOnQueueNotReady = configuration.DelayOnQueueNotReady;
+        if (delayOnQueueNotReady == 0)
+            delayOnQueueNotReady = 1;
 
-        DelayOnEmptyQueue = delayOnEmpty;
-        DelayOnItemNotReadyAndSolo = delayOnSolo;
+        var delayOnItemNotReady = configuration.DelayOnItemNotReady;
+        if (delayOnItemNotReady == 0)
+            delayOnItemNotReady = 1;
+
+        DelayOnEmptyQueue = delayOnEmptyQueue;
+        DelayOnQueueNotReady = delayOnQueueNotReady;
+        DelayOnItemNotReady = delayOnItemNotReady;
+        DelayOnItemExecuted = configuration.DelayOnItemExecuted;
     }
 
     internal void Clear()
