@@ -2,13 +2,15 @@
     <PropertyGroup>
         <RootNamespace>Pustalorc.Plugins.AsynchronousTaskDispatcher</RootNamespace>
         <AssemblyName>AsynchronousTaskDispatcher</AssemblyName>
-        <LangVersion>11</LangVersion>
+        <LangVersion>12</LangVersion>
         <Nullable>enable</Nullable>
         <AssemblyTitle>AsynchronousTaskDispatcher</AssemblyTitle>
         <Company>Pustalorc</Company>
         <Product>AsynchronousTaskDispatcher</Product>
         <AssemblyVersion>1.0.0</AssemblyVersion>
-        <FileVersion>1.2.0</FileVersion>
+        <PackageVersion>1.2.1</PackageVersion>
+        <FileVersion>1.2.1</FileVersion>
+        <Version>1.2.1</Version>
         <TargetFramework>net481</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Pustalorc.AsyncTaskDispatcher</PackageId>
@@ -17,12 +19,12 @@
         <Title>AsyncTaskDispatcher</Title>
         <Authors>Pustalorc</Authors>
         <Description>A RocketMod 4 plugin that adds an Asynchronous Task Dispatcher for asyncrhonously dispatching tasks into a second thread, and a static class for access like Rocketmod.</Description>
-        <Copyright>Copyright © 2022-2023 Pustalorc</Copyright>
+        <Copyright>Copyright © 2022-2024 Pustalorc</Copyright>
         <RepositoryUrl>https://github.com/Pustalorc/AsyncTaskDispatcher</RepositoryUrl>
         <RepositoryType>Github</RepositoryType>
-        <Version>1.2.0</Version>
-        <PackageReleaseNotes>Updated configuration and threading utils lib</PackageReleaseNotes>
+        <PackageReleaseNotes>Updated libraries and C# language version</PackageReleaseNotes>
     </PropertyGroup>
+
     <ItemGroup>
         <Reference Include="Rocket.API">
             <HintPath>libs\Rocket.API.dll</HintPath>
@@ -32,19 +34,11 @@
             <HintPath>libs\Rocket.Core.dll</HintPath>
             <Private>False</Private>
         </Reference>
-        <Reference Include="UnityEngine">
-            <HintPath>libs\UnityEngine.dll</HintPath>
-            <Private>False</Private>
-        </Reference>
-        <Reference Include="UnityEngine.CoreModule">
-            <HintPath>libs\UnityEngine.CoreModule.dll</HintPath>
-            <Private>False</Private>
-        </Reference>
     </ItemGroup>
+
     <ItemGroup>
-        <ReferencePathWithRefAssemblies Update="C:\Users\user\.nuget\packages\microsoft.netframework.referenceassemblies.net48\1.0.2\build\.NETFramework\v4.8\Facades\System.Runtime.dll"/>
-    </ItemGroup>
-    <ItemGroup>
-        <PackageReference Include="Pustalorc.AsyncThreadingUtils" Version="1.1.0"/>
+        <PackageReference Include="Pustalorc.AsyncThreadingUtils" Version="1.1.1"/>
+        <PackageReference Include="OpenMod.UnityEngine.Redist" Version="2021.3.29.1" PrivateAssets="all"/>
+        <PackageReference Include="JetBrains.Annotations" Aliases="JetBrainsAnnotations" Version="2024.2.0" PrivateAssets="all"/>
     </ItemGroup>
 </Project>

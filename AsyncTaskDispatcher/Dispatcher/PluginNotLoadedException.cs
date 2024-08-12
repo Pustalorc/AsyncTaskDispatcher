@@ -1,4 +1,6 @@
+extern alias JetBrainsAnnotations;
 using System;
+using JetBrains.Annotations;
 
 namespace Pustalorc.Plugins.AsynchronousTaskDispatcher.Dispatcher;
 
@@ -6,6 +8,7 @@ namespace Pustalorc.Plugins.AsynchronousTaskDispatcher.Dispatcher;
 /// <summary>
 ///     An exception signifying that the AsyncTaskDispatcher plugin is not currently loaded.
 /// </summary>
+[PublicAPI]
 public sealed class PluginNotLoadedException : Exception
 {
     /// <inheritdoc />

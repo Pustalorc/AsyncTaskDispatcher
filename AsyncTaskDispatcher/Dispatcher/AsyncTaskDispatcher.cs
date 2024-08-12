@@ -1,6 +1,8 @@
-﻿using System;
+﻿extern alias JetBrainsAnnotations;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 using Pustalorc.Libraries.AsyncThreadingUtils.TaskQueue.QueueableTasks;
 using Pustalorc.Plugins.AsynchronousTaskDispatcher.Plugin;
 
@@ -9,6 +11,7 @@ namespace Pustalorc.Plugins.AsynchronousTaskDispatcher.Dispatcher;
 /// <summary>
 ///     The class to interact with the Asynchronous Task Dispatcher.
 /// </summary>
+[PublicAPI]
 public static class AsyncTaskDispatcher
 {
     /// <summary>

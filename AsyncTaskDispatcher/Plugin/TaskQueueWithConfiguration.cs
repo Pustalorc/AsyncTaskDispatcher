@@ -9,7 +9,7 @@ namespace Pustalorc.Plugins.AsynchronousTaskDispatcher.Plugin;
 
 internal sealed class TaskQueueWithConfiguration : TaskQueue
 {
-    internal List<QueueableTask> ExposeQueue => Queue.ToList();
+    internal IEnumerable<QueueableTask> ExposeQueue => Queue.ToList();
 
     public int QueueCount => Queue.Count;
 

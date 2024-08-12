@@ -60,7 +60,7 @@ internal sealed class AsyncTaskDispatcherPlugin : RocketPlugin<AsyncTaskDispatch
             system.Start();
         }
 
-        Logger.Log("Async TaskDispatcher v1.2.0, with Utils Library v1.1.0, by Pustalorc has been loaded!");
+        Logger.Log("Async TaskDispatcher v1.2.1, with Utils Library v1.1.0, by Pustalorc has been loaded!");
     }
 
     protected override void Unload()
@@ -68,7 +68,7 @@ internal sealed class AsyncTaskDispatcherPlugin : RocketPlugin<AsyncTaskDispatch
         foreach (var system in TaskQueueSystems)
             system.Stop();
 
-        Logger.Log("Async TaskDispatcher v1.2.0, with Utils Library v1.1.0, by Pustalorc has been unloaded!");
+        Logger.Log("Async TaskDispatcher v1.2.1, with Utils Library v1.1.0, by Pustalorc has been unloaded!");
     }
 
     private TaskQueueWithConfiguration GetEmptiestSystem()
